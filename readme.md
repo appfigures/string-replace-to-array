@@ -1,5 +1,7 @@
 # String replace to array
 
+[![string-replace-to-array on NPM](https://img.shields.io/npm/v/string-replace-to-array.svg)](https://www.npmjs.com/package/string-replace-to-array)
+
 Works just like `String.prototype.replace` but outputs an array instead of a string.
 
 ### Simple example
