@@ -1,0 +1,27 @@
+{
+  "name": "string-replace-to-array",
+  "version": "1.0.0",
+  "description": "World like string.replace but outputs an array. Useful for replacing parts of the string with objects of other types.",
+  "main": "string-replace-to-array.js",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "keywords": [
+    "string",
+    "replace",
+    "array",
+    "react"
+  ],
+  "author": "Oz Michaeli",
+  "license": "MIT",
+  "dependencies": {
+    "invariant": "^2.2.1",
+    "lodash.flatten": "^4.2.0",
+    "lodash.isarray": "^4.0.0",
+    "lodash.isstring": "^4.0.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  }
+}
