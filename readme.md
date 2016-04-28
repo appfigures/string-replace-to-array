@@ -24,6 +24,12 @@ replace(
 // output: ['Hello ', <Person firstName="Hermione" lastName="Granger" />, ...]
 ```
 
+## Installation
+
+```
+npm install --save string-replace-to-array
+```
+
 ## API
 
 ```
