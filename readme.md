@@ -77,7 +77,7 @@ Yay!
 
 Mainly inspired by this conversation: https://github.com/facebook/react/issues/3386
 
-## Why not use [react-replace-string](https://github.com/iansinnott/react-string-replace)?
+### Why not use [react-replace-string](https://github.com/iansinnott/react-string-replace)?
 
-Because we needed the full API of `String.replace` and the parameters it passes the replace function.
+Because we needed the full API of `String.replace`, Especially the regex match parameters which get passed to the replace function.
 
