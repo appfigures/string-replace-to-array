@@ -51,15 +51,7 @@ and this React markup:
 <span>{ content }</span>
 ```
 
-The result of rendering would be:
-
-```
-<span>Hello world</span>
-```
-
-Notice how the newline got stripped out.
-
-With this method we can do:
+The resulting html would not render the newline. But now we can do:
 
 ```
 <span>{ replace(content, '\n', </br>) }</span>
@@ -71,7 +63,7 @@ and the output will be:
 <span>Hello</br>world</span>
 ```
 
-Yay!
+Now the newline will be rendered properly. Yay!
 
 ## Inspiration
 
