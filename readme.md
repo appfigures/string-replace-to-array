@@ -2,10 +2,76 @@
 
 Works just like `String.replace` but outputs an array instead of a string.
 
-## Differences from String.replace
+### Simple example
 
-- Accepts a replacer of any type, not just a string
-- Always returns an array
+```
+var replace = require('string-replace-to-array')
+replace('Hello Amy', 'Amy', { name: 'Amy' })
+// output: ['Hello ', { name: 'Amy' }]
+```
+
+### Full example
+
+```
+replace(
+  'Hello Hermione Granger...',
+  /(Hermione) (Granger)/g,
+  function (fullName, firstName, lastName, offset, string) {
+    return <Person firstName={ firstName } lastName={ lastName />
+  }
+)
+
+// output: ['Hello ', <Person firstName="Hermione" lastName="Granger" />, ...]
+```
+
+## API
+
+```
+(string, regexp|substr, newValue|function) => array
+```
+
+The API is designed to work just like [String.replace](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace). The only differences are:
+
+- The replacer (third parameter) doesn't have to be a string
+- Returns an array instead of a string
+
+## Why?
+
+We built this for use with React, but it's very generic and doesn't depend on any environment.
+
+For example, given this string
+
+```
+var content = 'Hello\nworld'
+```
+
+and this React markup:
+
+```
+<span>{ content }</span>
+```
+
+The output would be:
+
+```
+<span>Hello world</span>
+```
+
+Notice how the newline got stripped out.
+
+With this method we can do:
+
+```
+<span>{ replace(content, '\n', </br>) }</span>
+```
+
+and the output will be:
+
+```
+<span>Hello</br>world</span>
+```
+
+Yay!
 
 ## Inspiration
 
