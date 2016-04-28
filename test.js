@@ -15,6 +15,7 @@ describe('string-replace-to-array', function () {
 		})
 
 		it ('should accept a string in the middle', function () {
+			replace('Hello', 'll', 4).should.eql(['He', 4, 'o'])
 			replace('Hello there world', 'there', 'k42f/(.123').should.eql(['Hello ', 'k42f/(.123', ' world'])
 		})
 
@@ -36,6 +37,11 @@ describe('string-replace-to-array', function () {
 			replace('Hello there world there world Hello', /Hello/g, 'replaced')
 				.should.eql(['replaced', ' there world there world ', 'replaced'])
 		})
+
+		it ('should work with non-global regexps', function () {
+			replace('Hello', /ll/, 4).should.eql(['He', 4, 'o'])
+		})
+
 		it ('should use the replace function', function () {
 			var newValue = {}
 

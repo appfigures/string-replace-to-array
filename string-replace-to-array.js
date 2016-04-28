@@ -35,7 +35,7 @@ function replaceUsingString (string, patternString, newValueOrFn) {
 				newValueOrFn
 		)
 
-		if (endIndex < string.length - 1) {
+		if (endIndex < string.length) {
 			arr.push(string.substring(endIndex))
 		}
 
@@ -68,6 +68,10 @@ function replaceUsingRegexp (string, regexp, newValueOrFn) {
 			newValueOrFn.apply(this, result.concat(index, result.input)) :
 			newValueOrFn
 		output.push(out)
+
+		if (!regexp.global) {
+			break
+		}
 	}
 
 	if (lastIndex < string.length) {
