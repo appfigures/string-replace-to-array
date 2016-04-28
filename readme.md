@@ -30,7 +30,7 @@ replace(
 (string, regexp|substr, newValue|function) => array
 ```
 
-The API is designed to work just like [String.replace](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace). The only differences are:
+The API mimics [String.prototype.replace](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace). The only differences are:
 
 - The replacer (third parameter) doesn't have to be a string
 - Returns an array instead of a string
