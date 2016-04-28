@@ -1,6 +1,6 @@
 # String replace to array
 
-Works just like `String.replace` but outputs an array instead of a string.
+Works just like `String.prototype.replace` but outputs an array instead of a string.
 
 ### Simple example
 
@@ -51,7 +51,7 @@ and this React markup:
 <span>{ content }</span>
 ```
 
-The output would be:
+The result of rendering would be:
 
 ```
 <span>Hello world</span>
