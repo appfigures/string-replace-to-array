@@ -74,11 +74,13 @@ and the output will be:
 
 Now the newline will be rendered properly. Yay!
 
+For a more concrete example check out [react-easy-emoji](https://github.com/appfigures/react-easy-emoji), where this this is used to replace emoji unicode characters with `<img>` tags.
+
 ## Inspiration
 
 Mainly inspired by this conversation: https://github.com/facebook/react/issues/3386
 
 ### Why not use [react-replace-string](https://github.com/iansinnott/react-string-replace)?
 
-Because we needed the full API of `String.replace`, Especially the regex match parameters which get passed to the replace function.
+Because we needed the full API of `String.replace`, especially the regex match parameters which get passed to the replace function.
 
