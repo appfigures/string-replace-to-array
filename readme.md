@@ -5,7 +5,7 @@
 
 Works just like `String.prototype.replace` but outputs an array instead of a string.
 
-### Why?
+## Why?
 
 We built this for use with React, but it's very generic and doesn't depend on any environment. Consider the following scenario.
 
@@ -46,7 +46,7 @@ world
 
 Now the newline will be rendered properly. Yay!
 
-For a real-life example check out [react-easy-emoji](https://github.com/appfigures/react-easy-emoji), where this this is used to replace emoji unicode characters with `<img>` tags.
+## Example usage
 
 ### Simple example
 
@@ -69,6 +69,8 @@ replace(
 
 // output: ['Hello ', <Person firstName="Hermione" lastName="Granger" />, ...]
 ```
+
+For a real-life example check out [react-easy-emoji](https://github.com/appfigures/react-easy-emoji), where this this is used to replace emoji unicode characters with `<img>` tags.
 
 ## Installation
 
