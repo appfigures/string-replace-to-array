@@ -63,7 +63,7 @@ replace(
   'Hello Hermione Granger...',
   /(Hermione) (Granger)/g,
   function (fullName, firstName, lastName, offset, string) {
-    return <Person firstName={ firstName } lastName={ lastName />
+    return <Person firstName={ firstName } lastName={ lastName } />
   }
 )
 
