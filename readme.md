@@ -5,6 +5,49 @@
 
 Works just like `String.prototype.replace` but outputs an array instead of a string.
 
+### Why?
+
+We built this for use with React, but it's very generic and doesn't depend on any environment. Consider the following scenario.
+
+Given this string:
+
+```
+var content = 'Hello\nworld'
+```
+
+and this React markup:
+
+```
+<span>{ content }</span>
+```
+
+We'll get this output:
+```
+Hello world
+```
+_The newline character is ignored when the browser renders the resulting html._
+
+The solution is to replace `\n` with `<br>`:
+
+```
+<span>{ replace(content, '\n', <br>) }</span>
+```
+
+and the output will be:
+
+```
+<span>Hello</br>world</span>
+```
+When rendered:
+```
+Hello
+world
+```
+
+Now the newline will be rendered properly. Yay!
+
+For a real-life example check out [react-easy-emoji](https://github.com/appfigures/react-easy-emoji), where this this is used to replace emoji unicode characters with `<img>` tags.
+
 ### Simple example
 
 ```
@@ -43,38 +86,6 @@ The API mimics [String.prototype.replace](https://developer.mozilla.org/en-US/do
 
 - The replacer (third parameter) doesn't have to be a string
 - Returns an array instead of a string
-
-## Why?
-
-We built this for use with React, but it's very generic and doesn't depend on any environment.
-
-For example, given this string
-
-```
-var content = 'Hello\nworld'
-```
-
-and this React markup:
-
-```
-<span>{ content }</span>
-```
-
-The resulting html would not render the newline. But now we can do:
-
-```
-<span>{ replace(content, '\n', </br>) }</span>
-```
-
-and the output will be:
-
-```
-<span>Hello</br>world</span>
-```
-
-Now the newline will be rendered properly. Yay!
-
-For a more concrete example check out [react-easy-emoji](https://github.com/appfigures/react-easy-emoji), where this this is used to replace emoji unicode characters with `<img>` tags.
 
 ## Inspiration
 
