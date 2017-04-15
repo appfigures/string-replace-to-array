@@ -2,7 +2,6 @@
 
 var invariant = require('invariant'),
 	isString = require('lodash.isstring'),
-	isArray = require('lodash.isarray'),
 	flatten = require('lodash.flatten')
 
 function replace (string, regexpOrSubstr, newValueOrFn) {
@@ -85,7 +84,7 @@ function replaceUsingRegexp (string, regexp, newValueOrFn) {
 module.exports = function stringReplaceToArray (string, regexpOrSubstr, newSubStrOrFn) {
 	if (isString(string)) {
 		return replace(string, regexpOrSubstr, newSubStrOrFn)
-	} else if (!isArray(string) || !string[0]) {
+	} else if (!Array.isArray(string) || !string[0]) {
 		throw new TypeError('First argument must be an array or non-empty string');
 	} else {
 		return flatten(string.map(function (string) {

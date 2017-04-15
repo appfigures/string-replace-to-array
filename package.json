@@ -24,7 +24,6 @@
   "dependencies": {
     "invariant": "^2.2.1",
     "lodash.flatten": "^4.2.0",
-    "lodash.isarray": "^4.0.0",
     "lodash.isstring": "^4.0.1"
   },
   "devDependencies": {
