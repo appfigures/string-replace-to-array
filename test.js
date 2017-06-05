@@ -58,20 +58,20 @@ describe('string-replace-to-array', function () {
 		})
 
 		describe('String.replace equivalence', function () {
-			it ('should accept an empty regexp', function () {
+			it ('should handle an empty regexp', function () {
 				'Some string'.replace(new RegExp(''), 'New string').should.equal('New stringSome string')
 				replace('Some string', new RegExp(''), 'New string')
 					.should.eql(['New string', 'Some string'])
 			})
 
 			// Source: https://github.com/oztune/string-replace-to-array/issues/2
-			it ('should accept an empty regexp with the g flag', function () {
+			it ('should handle an empty regexp with the g flag', function () {
 				'1234'.replace(new RegExp('', 'g'), '|').should.equal('|1|2|3|4|')
 				replace('1234', new RegExp('', 'g'), '|')
 					.should.eql(['|', '1','|', '2', '|', '3', '|', '4', '|'])
 			})
 
-			it ('should accept an empty regexp with the g flag and an empty string inpuy', function () {
+			it ('should handle an empty regexp with the g flag and an empty string input', function () {
 				''.replace(new RegExp('', 'g'), '|').should.equal('|')
 				replace('', new RegExp('', 'g'), '|')
 					.should.eql(['|'])
