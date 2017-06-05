@@ -56,6 +56,14 @@ function replaceUsingRegexp (string, regexp, newValueOrFn) {
 	var lastIndex = 0
 	while (result = regexp.exec(string)) {
 		var index = result.index
+
+		if (result[0] === '') {
+			// When the regexp is an empty string
+			// we still want to advance our cursor to the next item.
+			// This is the behavior of String.replace.
+			regexp.lastIndex++
+		}
+
 		if (index !== lastIndex) {
 			output.push(string.substring(lastIndex, index))
 		}
