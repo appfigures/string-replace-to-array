@@ -1,7 +1,10 @@
 # String replace to array
 
+[![string-replace-to-array MIT license on NPM](https://img.shields.io/npm/l/string-replace-to-array.svg?style=flat-square)](https://www.npmjs.com/package/string-replace-to-array)
 [![string-replace-to-array on NPM](https://img.shields.io/npm/v/string-replace-to-array.svg)](https://www.npmjs.com/package/string-replace-to-array)
 [![Build Status](https://img.shields.io/circleci/project/oztune/string-replace-to-array.svg)](https://circleci.com/gh/oztune/string-replace-to-array)
+[![string-replace-to-array total downloads on NPM](https://img.shields.io/npm/dt/string-replace-to-array.svg?style=flat-square)](https://www.npmjs.com/package/string-replace-to-array)
+[![string-replace-to-array monthly downloads on NPM](https://img.shields.io/npm/dm/string-replace-to-array.svg?style=flat-square)](https://www.npmjs.com/package/string-replace-to-array)
 
 Works just like `String.prototype.replace` but outputs an array instead of a string.
 
