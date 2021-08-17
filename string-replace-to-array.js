@@ -1,12 +1,8 @@
 // Inspiration: https://github.com/facebook/react/issues/3386
 
-var invariant = require('invariant'),
-	isString = require('lodash.isstring'),
-	flatten = require('lodash.flatten')
-
 function replace (string, regexpOrSubstr, newValueOrFn) {
-	invariant(typeof string === 'string', 'First param must be a string')
-	invariant(typeof regexpOrSubstr === 'string' || regexpOrSubstr instanceof RegExp, 'Second param must be a string pattern or a regular expression')
+	if (typeof string !== 'string') throw new Error('First param must be a string')
+	if (typeof regexpOrSubstr !== 'string' && !(regexpOrSubstr instanceof RegExp)) throw new Error('Second param must be a string pattern or a regular expression')
 
 	var fn = (typeof regexpOrSubstr === 'string') ? replaceUsingString : replaceUsingRegexp
 
@@ -89,15 +85,19 @@ function replaceUsingRegexp (string, regexp, newValueOrFn) {
 	return output
 }
 
-module.exports = function stringReplaceToArray (string, regexpOrSubstr, newSubStrOrFn) {
-	if (isString(string)) {
-		return replace(string, regexpOrSubstr, newSubStrOrFn)
-	} else if (!Array.isArray(string) || !string[0]) {
-		throw new TypeError('First argument must be an array or non-empty string');
+module.exports = function stringReplaceToArray (stringOrArray, regexpOrSubstr, newSubStrOrFn) {
+	if (typeof stringOrArray === 'string') {
+		return replace(stringOrArray, regexpOrSubstr, newSubStrOrFn)
+	} else if (!Array.isArray(stringOrArray) || !stringOrArray[0]) {
+		throw new TypeError('First argument must be an array or non-empty string')
 	} else {
-		return flatten(string.map(function (string) {
-			if (!isString(string)) return string
-			return replace(string, regexpOrSubstr, newSubStrOrFn)
-		}))
+		var len = stringOrArray.length
+		var output = []
+		for (var i = 0; i < len; ++i) {
+			var arrayItem = stringOrArray[i]
+			if (typeof arrayItem !== 'string') output.push(arrayItem)
+			else output.push.apply(output, replace(arrayItem, regexpOrSubstr, newSubStrOrFn))
+		}
+		return output
 	}
 }

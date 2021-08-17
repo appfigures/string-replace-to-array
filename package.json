@@ -1,14 +1,14 @@
 {
   "name": "string-replace-to-array",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "Works like String.prototype.replace but outputs an array. Useful for replacing parts of the string with objects of other types.",
   "main": "string-replace-to-array.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/oztune/string-replace-to-array"
+    "url": "https://github.com/appfigures/string-replace-to-array"
   },
   "bugs": {
-    "url": "https://github.com/oztune/string-replace-to-array/issues"
+    "url": "https://github.com/appfigures/string-replace-to-array/issues"
   },
   "scripts": {
     "test": "mocha test.js"
@@ -17,17 +17,14 @@
     "string",
     "replace",
     "array",
-    "react"
+    "react",
+    "emoji"
   ],
+  "sideEffects": "false",
   "author": "Oz Michaeli",
   "license": "MIT",
-  "dependencies": {
-    "invariant": "^2.2.1",
-    "lodash.flatten": "^4.2.0",
-    "lodash.isstring": "^4.0.1"
-  },
   "devDependencies": {
-    "chai": "^3.5.0",
-    "mocha": "^2.4.5"
+    "chai": "^4.3.4",
+    "mocha": "^9.0.3"
   }
 }

@@ -49,7 +49,7 @@ describe('string-replace-to-array', function () {
 				match.should.include('He')
 				a.should.include('ll')
 				string.should.equal('Hello there world there world Hellllo')
-				offset.should.be.a.number
+				offset.should.be.a('number')
 				return { inside: a }
 			}
 
