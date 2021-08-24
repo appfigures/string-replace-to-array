@@ -83,5 +83,18 @@ describe('string-replace-to-array', function () {
 			replace([{}, 'some string', {}], 'some', 'a')
 				.should.eql([{}, 'a', ' string', {}])
 		})
+		// Source: https://github.com/appfigures/react-easy-emoji/issues/18
+		it ('should provide a global offset when doing a string replace', function () {
+			const result = replace(["🧡 abc", "🧡 xyz"], '🧡', (_match, offset, _string) => {
+				return offset
+			})
+			result.should.eql([0, ' abc', 6, ' xyz'])
+		})
+		it ('should provide a global offset when doing a regex replace', function () {
+			const result = replace(["🧡 abc", "🧡 xyz"], /🧡/g, (_match, offset, _string) => {
+				return offset
+			})
+			result.should.eql([0, ' abc', 6, ' xyz'])
+		})
 	})
 })

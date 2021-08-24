@@ -1,6 +1,6 @@
 {
   "name": "string-replace-to-array",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Works like String.prototype.replace but outputs an array. Useful for replacing parts of the string with objects of other types.",
   "main": "string-replace-to-array.js",
   "repository": {
