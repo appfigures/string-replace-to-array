@@ -6,7 +6,7 @@
 [![string-replace-to-array total downloads on NPM](https://img.shields.io/npm/dt/string-replace-to-array.svg?style=flat-square)](https://www.npmjs.com/package/string-replace-to-array)
 [![string-replace-to-array monthly downloads on NPM](https://img.shields.io/npm/dm/string-replace-to-array.svg?style=flat-square)](https://www.npmjs.com/package/string-replace-to-array)
 
-Works just like `String.prototype.replace` but outputs an array instead of a string.
+Works just like `String.prototype.replace` but outputs an array instead of a string. It's [tiny](https://bundlephobia.com/package/string-replace-to-array) (<1KB) and has no dependencies.
 
 ## Why?
 
