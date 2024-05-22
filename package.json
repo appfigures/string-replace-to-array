@@ -20,7 +20,7 @@
     "react",
     "emoji"
   ],
-  "sideEffects": "false",
+  "sideEffects": false,
   "author": "Oz Michaeli",
   "license": "MIT",
   "devDependencies": {
